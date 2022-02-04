@@ -1,0 +1,51 @@
+<footer class="bg-brand text-silver" x-data="{ showMaps:false , innerWidth: document.documentElement.clientWidth}">
+    <div class=" h-72 mb-4 bg-gray-500 text-center text-white">
+        <button @click="showMaps=true" class="h-72" x-show="!showMaps">
+            Hier klicken um Google Maps anzuzeigen, dabei werden Cookies von Google geladen.
+        </button>
+        <template x-if="showMaps">
+
+            <iframe id="myFrame"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9726.457099800986!2d13.252156!3d52.4499018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x443850e529a86f0d!2sToms%20Kaffeer%C3%B6sterei%20-%20Caf%C3%A9%20-%20guter%20Kaffee%20und%20Espresso%20frisch%20ger%C3%B6stet%20in%20Berlin%20Zehlendorf!5e0!3m2!1sde!2sde!4v1643984333635!5m2!1sde!2sde"
+                @resize.window.debounce.100="innerWidth = document.documentElement.clientWidth"
+                x-bind:width="innerWidth" height="300" allowfullscreen="" aria-hidden="false" tabindex="0">
+            </iframe>
+        </template>
+
+    </div>
+    <div class="mb-4 text-center">
+        <div class=" flex flex-col md:flex-row justify-evenly pb-4" id="contact">
+            <div>
+                <h1 class="pt-4 md:mt-0 mb-2 text-4xl text-center text-gray-50">Kontakt</h1>
+                <p class="font-semibold text-center text-white">
+                    Email:
+                    <a href="mailto:info@toms-kaffeeroesterei.de"><span
+                            class="text-white">info@toms-kaffeeroesterei.de</span></a><br />
+
+                    Telefon: <span class="text-white">+49 30 847 222 41</span><br />
+                </p>
+            </div>
+
+            <div>
+                <h1 class="pt-4 md:mt-0 mb-2 text-4xl text-center text-white">Adresse</h1>
+                <p class="font-semibold text-white text-center">
+                    Toms Kaffeerösterei GmbH<br>
+                    Ladenstr. 50<br>
+                    14169 Berlin
+                </p>
+            </div>
+        </div>
+
+        <div class=" border-b py-4 divide-x-2 divide-silver text-gray-50">
+            <a routerLink="impressum" class="pr-4">Impressum</a><a routerLink="datenschutz"
+                class="px-4">Datenschutz</a><a class="pl-4" routerLink="agb">AGB</a>
+        </div>
+        <div class="col-span-2 pt-4 divide-x-2 text-gray-50">
+            <span class="pr-4">Website developed by <a class="font-bold"
+                    href="https://www.linkedin.com/in/tschuehly/">Thomas Schühly</a></span>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

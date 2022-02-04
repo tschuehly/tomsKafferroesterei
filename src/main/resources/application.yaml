@@ -1,0 +1,12 @@
+spring:
+  mustache:
+    suffix: .html
+    cache: false
+    prefix: file:src/main/resources/templates/
+  web:
+    resources:
+      static-locations: file:src/main/resources/static/
+      cache:
+        period: 0
+  mvc:
+    static-path-pattern: /static/**

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Toms Kaffeerösterei</title>
+    <link href="/static/output.css" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js" defer></script>
+</head>
+
+<body>
+    <div class="flex flex-col h-screen">
+        <nav class="flex sticky w-full bg-brand  text-white p-2 pr-4
+                    items-center text-lg font-bold justify-start flex-col md:flex-row" id="navigation"
+            x-data="{ open:false }">
+            <div class="w-full md:w-fit flex justify-between md:block">
+                <img class="px-4"
+                    src="https://static.wixstatic.com/media/edfe42_0e962e67dab0435fb8330b66540d7963~mv2.png/v1/fill/w_103,h_103,al_c,q_85,usm_0.66_1.00_0.01/Logo-Toms-Kontur%20(2)%20(1)-001_edited.webp">
+                <button class="block md:hidden" @click="open=!open">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40"
+                        height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+
+                </button>
+            </div>
+
+            <div class="flex-1  justify-end   md:flex md:flex-row py-4 text-2xl md:text-lg text-center space-y-4 md:space-y-0 md:space-x-6 items-center"
+                x-bind:class="open ? 'flex flex-col':'hidden'">
+                <a>Shop</a>
+                <a>Die Rösterei</a>
+                <a>Kontakt</a>
+                <a>Jobs</a>
+                <a>Gastro-Büro-Wiederverkäufer</a>
+                <a class="flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="40"
+                        height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                </a>
+            </div>
+        </nav>
