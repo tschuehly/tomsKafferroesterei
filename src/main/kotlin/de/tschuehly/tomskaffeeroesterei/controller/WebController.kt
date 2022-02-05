@@ -9,8 +9,14 @@ class WebController {
     fun index(): String{
         return "index"
     }
+
     @GetMapping("/shop")
     fun shop(): String{
         return "shop"
+    }
+
+    @GetMapping("/shop/ganzebohnen")
+    fun ganzebohnen(): String{
+        return "ganzebohnen"
     }
 }
