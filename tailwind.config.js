@@ -5,6 +5,9 @@ module.exports = {
       md: '840px'
     },
     extend: {
+      screens: {
+        'tall': { 'raw': '(min-height: 57rem)' },
+      },
       spacing: {
         '160': '40rem'
       },

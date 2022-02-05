@@ -1,6 +1,7 @@
-<footer class="bg-brand text-silver" x-data="{ showMaps:false , innerWidth: document.documentElement.clientWidth}">
-    <div class=" h-72 mb-4 bg-gray-500 text-center text-white">
-        <button @click="showMaps=true" class="h-72" x-show="!showMaps">
+<footer class="bg-brand text-silver" x-data="{ showMaps:false , innerWidth: document.documentElement.clientWidth}"
+        xmlns:x-bind="http://www.w3.org/1999/xhtml">
+    <div class=" h-20 mb-4 bg-gray-500 text-center text-white">
+        <button @click="showMaps=true" class="h-20" x-show="!showMaps">
             Hier klicken um Google Maps anzuzeigen, dabei werden Cookies von Google geladen.
         </button>
         <template x-if="showMaps">
@@ -40,9 +41,9 @@
             <a routerLink="impressum" class="pr-4">Impressum</a><a routerLink="datenschutz"
                 class="px-4">Datenschutz</a><a class="pl-4" routerLink="agb">AGB</a>
         </div>
-        <div class="col-span-2 pt-4 divide-x-2 text-gray-50">
-            <span class="pr-4">Website developed by <a class="font-bold"
-                    href="https://www.linkedin.com/in/tschuehly/">Thomas Schühly</a></span>
+        <div class="col-span-2 pt-4 divide-x-2 text-gray-50 font-">
+            <span class="pr-4">Webseite entwickelt von <a class="font-bold"
+                    href="https://www.linkedin.com/in/tschuehly/">Thomas Schühly - IT Consulting</a></span>
         </div>
     </div>
 </footer>

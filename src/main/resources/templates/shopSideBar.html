@@ -1,52 +1,64 @@
-<div class=" font-semibold  text-center absolute md:relative ">
-    <div class="p-4 shrink md:flex flex-col flex-wrap space-y-4 md:sticky top-[14%] bg-white justify-center w-72 items-center"
-        x-bind:class="showSideBar ? 'flex min-h-screen max-h-screen fixed top-0':'hidden'">
+<div class="absolute font-semibold text-center md:relative min-w-[20rem] tall:min-w-[10rem] tall:w-[10rem]">
+    <div class="top-0 grid flex-wrap content-center justify-between h-screen grid-cols-1 p-4 bg-white justify-items-center shrink md:flex md:sticky"
+        x-bind:class="showSideBar ? 'grid-rows-5 grid-cols-2 fixed w-80':'hidden';"
+        x-ref="sideBarEl"
+        id="sideBar">
 
-        <a href="/shop/ganzebohnen">
-            <div class="flex flex-col items-center w-32">
-                <img class="object-coverh-16 w-16 rounded-full" src="/static/images/bohnen.png">
+        <a class="self-center"  href="/shop/ganzebohnen">
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+                <img class="object-cover w-16 h-16 rounded-full" src="/static/images/bohnen.png">
                 <div class="">Ganze Bohnen</div>
             </div>
         </a>
 
-        <a href="/shop/filterkaffeemaschine">
-            <div class="flex flex-col items-center w-32">
-                <img class="object-coverh-16 w-16 rounded-full" src="/static/images/filtermachine.png">
+        <a class="self-center"  href="/shop/filterkaffeemaschine">
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+                <img class="object-cover w-16 h-16 rounded-full" src="/static/images/filtermachine.png">
                 <div class="">Filterkaffemaschine</div>
             </div>
         </a>
 
-        <div class="flex flex-col items-center w-32">
-            <img class="object-coverh-16 w-16 rounded-full" src="/static/images/french_press.png">
-            <div class="">French Press</div>
-        </div>
+        <a class="self-center" >
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+                <img class="object-cover w-16 h-16 rounded-full" src="/static/images/french_press.png">
+                <div class="">French Press</div>
+            </div>
+        </a>
 
-        <div class="flex flex-col items-center w-32">
-            <img class="object-coverh-16 w-16 rounded-full" src="/static/images/filter.png">
-            <div class="">Handfilter</div>
-        </div>
+        <a class="self-center" >
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+                <img class="object-cover w-16 h-16 rounded-full" src="/static/images/filter.png">
+                <div class="">Handfilter</div>
+            </div>
+        </a>
 
-        <div class="flex flex-col items-center w-32">
-            <img class="object-coverh-16 w-16 rounded-full" src="/static/images/stove_top.png">
-            <div class="">Herdkanne</div>
-        </div>
-
-        <div class="flex flex-col items-center w-32">
-            <img class="object-coverh-16 w-16 rounded-full" src="/static/images/aeropress.png">
+        <a class="self-center" >
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+                <img class="object-cover w-16 h-16 rounded-full" src="/static/images/stove_top.png">
+                <div class="">Herdkanne</div>
+            </div>
+        </a>
+        <a class="self-center" >
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+            <img class="object-cover w-16 h-16 rounded-full" src="/static/images/aeropress.png">
             <div class="">Aeropress</div>
         </div>
-
-        <div class="flex flex-col items-center w-32">
-            <img class="object-coverh-16 w-16 rounded-full" src="/static/images/karlsbaader_kanne.png">
+</a>
+        <a class="self-center" >
+            <div class="flex flex-col items-center w-32 py-4 tall:pb-2">
+            <img class="object-cover w-16 h-16 rounded-full" src="/static/images/karlsbaader_kanne.png">
             <div class="">Karlsbaader Kanne</div>
         </div>
+</a>
+<a class="self-center" >
 
-        <div class="flex flex-col items-center w-32">
-            <img class="object-coverh-16 w-16 rounded-full" src="/static/images/trueffel.webp">
-            <div class="">Schokolade</div>
-        </div>
-        <div class="md:hidden">
-            <button class="shrink p-2 bg-brand-300 rounded-full m-2" @click="showSideBar = !showSideBar">
+    <div class="flex flex-col items-center w-32 py-4 tall:pb-2 ">
+        <img class="object-cover w-16 h-16 rounded-full" src="/static/images/trueffel.webp">
+        <div class="">Schokolade</div>
+    </div>
+</a>
+        <div x-show="showSideBar" class="self-center md:hidden">
+            <button class="p-2 m-2 rounded-full shrink bg-brand-300" @click="showSideBar = !showSideBar">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="40" height="40"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
                     stroke-linejoin="round">
