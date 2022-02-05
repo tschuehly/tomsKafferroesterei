@@ -19,4 +19,9 @@ class WebController {
     fun ganzebohnen(): String{
         return "ganzebohnen"
     }
+
+    @GetMapping("/shop/filterkaffeemaschine")
+    fun filterkaffeemaschine(): String{
+        return "filterkaffeemaschine"
+    }
 }

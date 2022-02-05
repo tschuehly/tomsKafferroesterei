@@ -1,0 +1,29 @@
+{{>navigation}}
+<div class="flex flex-row ">
+    <div class="grow">
+        <div class="text-center text-white bg-cover" style="background-image: url(/static/images/filtermachine.png);">
+            <div class=" p-8" style="background: linear-gradient(0deg, #00000091 30%, #71717144 100%);">
+                <h1 class="text-2xl font-semibold pb-4">Ganze Bohnen</h1>
+                <div>
+                    Dabei hat der Espresso zubereitet
+                    mit einer Siebträgermaschine deutlich weniger Koffein jedoch schmeckt er wesentlich intensiver. Beim
+                    Filterkaffee ist die Extraktionsphase länger, dadurch hat eine Tasse Filterkaffee bis zu 5 mal mehr
+                    Koffein. Bei der Zubereitung mit Frenchpress hängt die Intensität von der Dauer der der Ziehphase
+                    ab.
+                    Diese Methode wird auch von professionellen Kaffeeverkostern genutzt.
+                </div>
+            </div>
+
+        </div>
+        <div class="flex flex-row" x-data="{showSideBar: false}">
+            {{>shopSideBar}}
+
+            {{>shopGrid}}
+        </div>
+
+    </div>
+</div>
+
+
+
+{{>footer}}
