@@ -1,4 +1,7 @@
 @font-face {
-    font-family: ombotak;
-    src: url(Om_Botak.otf);
+    font-family: 'oswald';
+    src: url(Oswald-VariableFont_wght.ttf) format("TrueType") ;
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: normal;
   }

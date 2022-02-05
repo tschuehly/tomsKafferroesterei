@@ -1,9 +1,9 @@
 {{>navigation}}
 <div class="">
-    <img class=" object-cover h-96 md:h-160 w-full" src="/static/header_main_laden.webp">
+    <img class=" object-cover h-96 md:h-180 w-full" src="/static/images/header_main_laden.webp">
 </div>
 <div class="bg-brand py-12 px-2 text-white ">
-    <div class="container flex  gap-8  justify-around mx-auto">
+    <div class="container flex flex-wrap gap-8  justify-around mx-auto">
         <div class="flex flex-col text-center items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="40" height="40"
                 viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" fill="none" stroke-linecap="round"
@@ -13,10 +13,10 @@
                 <circle cx="17" cy="17" r="2" />
                 <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
             </svg>
-            <span class="font-bold text-lg h-16">
+            <span class="font-medium text-xl h-18 py-2">
                 Kostenlose<br> Lieferung
             </span>
-            <span class="text-lg">
+            <span class="text-lg font-light">
                 Ab 30€ Bestellwert
             </span>
         </div>
@@ -32,10 +32,10 @@
                 <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z" />
                 <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" />
             </svg>
-            <span class="font-bold text-lg h-16">
+            <span class="font-medium text-xl h-18 py-2">
                 Traditionelles <br>Trommelröstverfahren
             </span>
-            <span class="text-lg">
+            <span class="text-lg font-light">
                 Täglich frisch geröstet
             </span>
         </div>
@@ -49,10 +49,10 @@
                     d="M16.5 15a4.5 4.5 0 0 0 -4.5 4.5m4.5 -8.5a4.5 4.5 0 0 0 -4.5 4.5m4.5 -8.5a4.5 4.5 0 0 0 -4.5 4.5m-4 3.5c2.21 0 4 2.015 4 4.5m-4 -8.5c2.21 0 4 2.015 4 4.5m-4 -8.5c2.21 0 4 2.015 4 4.5m0 -7.5v6" />
             </svg>
 
-            <span class="font-bold text-lg h-16">
+            <span class="font-medium text-xl h-18 py-2">
                 Kaffee direkt<br> aus Kolumbien
             </span>
-            <span class="text-lg">
+            <span class="text-lg font-light">
                 Von sozialen Projekten
             </span>
         </div>
@@ -66,17 +66,30 @@
                     d="M12 12c2 -2.96 0 -7 -1 -8c0 3.038 -1.773 4.741 -3 6c-1.226 1.26 -2 3.24 -2 5a6 6 0 1 0 12 0c0 -1.532 -1.056 -3.94 -2 -5c-1.786 3 -2.791 3 -4 2z" />
             </svg>
 
-            <span class="font-bold text-lg h-16">
+            <span class="font-medium text-xl h-18 py-2">
                 Schonende<br> Röstung
             </span>
-            <span class="text-lg">
+            <span class="text-lg font-light">
                 Sehr säurearm
             </span>
         </div>
     </div>
 </div>
 <div class="flex w-full  flex-row flex-wrap gap-20 px-5 py-32 justify-center">
-    <div class=" grid grid-cols-5 h-80  w-160 rounded-2xl">
+    <div class=" grid grid-cols-5 min-h-80  w-160 rounded-2xl">
+        <div class="flex flex-col col-span-3 p-4">
+            <h2 class="text-2xl font-bold pb-4">Ganze Bohnen</h2>
+            <p class="grow">Lernen Sie unsere besten Kaffeebohnen für den Vollautomaten oder zum selber Mahlen kennen.
+            </p>
+            <a href="/shop/ganzebohnen" class="underline underline-offset-2 font-semibold text-center py-2">
+                Hier unsere Kaffe Bohnen kennenlernen
+            </a>
+
+        </div>
+        <a class="col-span-2 bg-cover bg-center" style="background-image: url('/static/images/bohnen.png')">
+        </a>
+    </div>
+    <div class=" grid grid-cols-5 min-h-80  w-160 rounded-2xl">
         <div class="flex flex-col col-span-3 p-4">
             <h2 class="text-2xl font-bold pb-4">Espresso</h2>
             <p class="grow">Lernen Sie unsere besten Espresso kennen. Vom Probierpack über Toms Extra-Stark bis hin zu
@@ -87,9 +100,11 @@
             </a>
 
         </div>
-        <img class="h-80 col-span-2 w-full object-cover rounded-2xl" src="/static/espresso.jfif">
+        <a class="col-span-2 bg-cover bg-center" style="background-image: url('/static/images/espresso.jfif');">
+
+        </a>
     </div>
-    <div class=" grid grid-cols-5 h-80 w-160 rounded-2xl">
+    <div class=" grid grid-cols-5 min-h-80 w-160 rounded-2xl">
         <div class="flex flex-col col-span-3  p-4">
             <h2 class="text-2xl font-bold pb-4">Filterkaffee</h2>
             <span class="grow">Das aufbrühen von Filterkaffee (pour over) ist heute wieder modern und beinhaltet eine
@@ -100,9 +115,9 @@
                 Hier unsere Filterkaffee Sorten kennenlernen
             </a>
         </div>
-        <img class="h-80 col-span-2  w-full object-cover rounded-2xl" src="/static/filter_coffee.jfif">
+        <img class="min-h-80 col-span-2  w-full object-cover rounded-2xl" src="/static/images/filter_coffee.jfif">
     </div>
-    <div class=" grid grid-cols-5 h-80 w-160 rounded-2xl">
+    <div class=" grid grid-cols-5 min-h-80 w-160 rounded-2xl">
         <div class="flex flex-col col-span-3  p-4">
             <h2 class="text-2xl font-bold pb-4">Hacienda Misiones Kaffee</h2>
             <span class="grow">Durch den direkten Handel mit der Farm Hacienda Misiones in Kolumbien unterstützen Sie
@@ -112,10 +127,10 @@
                 Hier unseren Hacienda Misiones Kaffee kennenlernen.
             </a>
         </div>
-        <img class="h-80 col-span-2  w-full object-cover rounded-2xl"
+        <img class="min-h-80 col-span-2  w-full object-cover rounded-2xl"
             src="https://images.squarespace-cdn.com/content/v1/5e57b4467056f74bf9460c7b/1602260747084-YF8OKVNPFCI0ZLZD39YM/website-4.jpg">
     </div>
-    <div class=" grid grid-cols-5 h-80 w-160 rounded-2xl">
+    <div class=" grid grid-cols-5 min-h-80 w-160 rounded-2xl">
         <div class="flex flex-col col-span-3  p-4">
             <h2 class="text-2xl font-bold pb-4">Rohrzucker</h2>
             <span class="grow">Rohrzucker wird aus Zuckerrohr gewonnen. Zuckerrohr ist ein Gras, welches einen süßen
@@ -124,10 +139,10 @@
                 Hier unseren Rohrzucker kennenlernen.
             </a>
         </div>
-        <img class="h-80 col-span-2  w-full object-cover  rounded-2xl"
+        <img class="min-h-80 col-span-2  w-full object-cover  rounded-2xl"
             src="https://static.wixstatic.com/media/22de605a5ce24756923dccab8f04f9d2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/S%C3%BC%C3%9Fen%20Kaffee.webp">
     </div>
-    <div class=" grid grid-cols-5 h-80 w-160 rounded-2xl">
+    <div class=" grid grid-cols-5 min-h-80 w-160 rounded-2xl">
         <div class="flex flex-col col-span-3  p-4">
             <h2 class="text-2xl font-bold pb-4">Schokolade</h2>
             <span class="grow">
@@ -139,7 +154,8 @@
                 Hier unsere Schokolade kennenlernen.
             </a>
         </div>
-        <img class="h-80 col-span-2  w-full object-cover  rounded-2xl" src="/static/la-praline-schokotrueffel.jpg">
+        <img class="min-h-80 col-span-2  w-full object-cover  rounded-2xl"
+            src="/static/images/la-praline-schokotrueffel.jpg">
     </div>
 
 </div>
@@ -150,19 +166,19 @@
             <div class=" flex flex-justify pt-16 text-xl flex-wrap justify-center gap-10">
 
                 <div class="flex flex-col items-center w-80">
-                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/tom.webp">
+                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/images/tom.webp">
                     <span>Tom - Thomas <br><span class="text-stone-800">Mitgünder und Geschäftsführer</span></span>
                 </div>
                 <div class="flex flex-col items-center w-80">
-                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/nicolai.webp">
+                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/images/nicolai.webp">
                     <span>Nicolai Riesterer <br> <span class="text-stone-800"> Leitung</span></span>
                 </div>
                 <div class="flex flex-col items-center w-80">
-                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/mauro.webp">
+                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/images/mauro.webp">
                     <span>Mauro Arriagada<br> <span class="text-stone-800"> Röster</span></span>
                 </div>
                 <div class="flex flex-col items-center w-80">
-                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/jan.webp">
+                    <img class="object-cover h-60 w-60 rounded-full pb-4" src="/static/images/jan.webp">
                     <span>Jan<br> <span class="text-stone-800"> Röster</span></span>
                 </div>
 
