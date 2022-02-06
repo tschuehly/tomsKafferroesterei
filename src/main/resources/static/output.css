@@ -472,9 +472,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
 @media (min-width: 840px) {
   .container {
     max-width: 840px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1040px) {
+  .container {
+    max-width: 1040px;
   }
 }
 
@@ -497,10 +521,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .top-\[14\%\] {
   top: 14%;
-}
-
-.order-first {
-  order: -9999;
 }
 
 .col-span-2 {
@@ -568,14 +588,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 4rem;
 }
 
-.min-h-\[10rem\] {
-  min-height: 10rem;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
 .w-full {
   width: 100%;
 }
@@ -586,6 +598,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-80 {
   width: 20rem;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .w-32 {
@@ -626,10 +642,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-5 {
@@ -720,9 +732,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 1px;
 }
 
-.bg-brand-300 {
+.bg-brand-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(128 98 77 / var(--tw-bg-opacity));
+  background-color: rgb(77 59 46 / var(--tw-bg-opacity));
+}
+
+.bg-brand-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(154 118 92 / var(--tw-bg-opacity));
 }
 
 .bg-brand {
@@ -735,29 +752,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
+.bg-brand-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(128 98 77 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-brand-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(154 118 92 / var(--tw-bg-opacity));
-}
-
-.bg-brand-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(103 79 61 / var(--tw-bg-opacity));
-}
-
-.bg-brand-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(77 59 46 / var(--tw-bg-opacity));
-}
-
-.bg-brand-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(171 139 115 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -945,6 +947,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-underline-offset: 2px;
 }
 
+@media (min-width: 720px) {
+  .sm\:h-80 {
+    height: 20rem;
+  }
+
+  .sm\:h-60 {
+    height: 15rem;
+  }
+
+  .sm\:w-60 {
+    width: 15rem;
+  }
+
+  .sm\:w-80 {
+    width: 20rem;
+  }
+}
+
 @media (min-width: 840px) {
   .md\:relative {
     position: relative;
@@ -987,18 +1007,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     order: 8;
   }
 
-  .md\:order-last {
-    order: 9999;
-  }
-
-  .md\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .md\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1021,18 +1029,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: fit-content;
   }
 
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .md\:grid-rows-1 {
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1047,6 +1043,52 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
+@media (min-width: 1040px) {
+  .xl\:order-1 {
+    order: 1;
+  }
+
+  .xl\:order-2 {
+    order: 2;
+  }
+
+  .xl\:order-4 {
+    order: 4;
+  }
+
+  .xl\:order-3 {
+    order: 3;
+  }
+
+  .xl\:order-6 {
+    order: 6;
+  }
+
+  .xl\:order-5 {
+    order: 5;
+  }
+
+  .xl\:order-7 {
+    order: 7;
+  }
+
+  .xl\:order-8 {
+    order: 8;
+  }
+
+  .xl\:h-60 {
+    height: 15rem;
+  }
+
+  .xl\:w-60 {
+    width: 15rem;
+  }
+
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

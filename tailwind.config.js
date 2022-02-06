@@ -2,7 +2,11 @@ module.exports = {
   content: ["./src/main/resources/templates/*.html"],
   theme: {
     screens: {
-      md: '840px'
+      xs: '600px',
+      sm: '720px',
+      md: '840px',
+      lg: '960px',
+      xl: '1040px'
     },
     extend: {
       screens: {
