@@ -2,6 +2,7 @@ package de.tschuehly.tomskaffeeroesterei.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
 class WebController {
@@ -14,14 +15,14 @@ class WebController {
     fun shop(): String{
         return "shop"
     }
-
-    @GetMapping("/shop/ganzebohnen")
-    fun ganzebohnen(): String{
-        return "ganzebohnen"
+    @GetMapping("/die-roesterei")
+    fun dieRoesterei(): String{
+        return "die-roesterei"
     }
 
-    @GetMapping("/shop/filterkaffeemaschine")
-    fun filterkaffeemaschine(): String{
-        return "filterkaffeemaschine"
+    @GetMapping("/shop/{slug}")
+    fun ganzebohnen(@PathVariable slug: String): String{
+        return "shop/$slug"
     }
+
 }

@@ -6,10 +6,10 @@ module.exports = {
     },
     extend: {
       screens: {
-        'tall': { 'raw': '(min-height: 57rem)' },
+        'tall': { 'raw': '(min-height: 60rem)' },
       },
       spacing: {
-        '160': '40rem'
+        '160': '32rem'
       },
       colors: {
         'brand': {
