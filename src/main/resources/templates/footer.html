@@ -6,7 +6,7 @@
         </button>
         <template x-if="showMaps">
 
-            <iframe id="myFrame"
+            <iframe id="myFrame w- "
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9726.457099800986!2d13.252156!3d52.4499018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x443850e529a86f0d!2sToms%20Kaffeer%C3%B6sterei%20-%20Caf%C3%A9%20-%20guter%20Kaffee%20und%20Espresso%20frisch%20ger%C3%B6stet%20in%20Berlin%20Zehlendorf!5e0!3m2!1sde!2sde!4v1643984333635!5m2!1sde!2sde"
                 @resize.window.debounce.100="innerWidth = document.documentElement.clientWidth"
                 x-bind:width="innerWidth" height="300" allowfullscreen="" aria-hidden="false" tabindex="0">

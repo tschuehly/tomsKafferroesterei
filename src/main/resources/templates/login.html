@@ -1,0 +1,26 @@
+{{>navigation}}
+<h1>Login</h1>
+<form>
+    <label>Email:
+        <input type="text" name="email" />
+    </label>
+    <label>Password:
+        <input type="password" name="password" />
+    </label>
+    <button  hx-post="/api/user/login" hx-target="#response">Submit</button>
+</form>
+<h1>Signup</h1>
+<form >
+    <label>Email:
+        <input type="text" name="email" />
+    </label>
+    <label>Password:
+        <input type="password" name="password" />
+    </label>
+    <button hx-post="/api/user/register" hx-target="#response" >Submit</button>
+</form>
+
+<div id="response">
+
+</div>
+{{>footer}}

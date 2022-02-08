@@ -1,8 +1,10 @@
+
 spring:
   mustache:
     suffix: .html
     cache: false
     prefix: file:src/main/resources/templates/
+    expose-request-attributes: true
   web:
     resources:
       static-locations: file:src/main/resources/static/
@@ -10,3 +12,25 @@ spring:
         period: 0
   mvc:
     static-path-pattern: /static/**
+  main:
+    banner-mode: "off"
+  datasource:
+    url: ${SUPABASE_DATABASE_URL}
+    username: ${SUPABASE_DATABASE_USER}
+    password: ${SUPABASE_DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    change-log: /db/changelog/db.changelog-master.xml
+    enabled: false
+logging:
+  level:
+    org.springframework:
+#      web: DEBUG
+#      security: DEBUG
