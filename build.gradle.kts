@@ -30,10 +30,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.0.3")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     implementation("org.liquibase:liquibase-core:4.7.1")
 
-    implementation("io.supabase:gotrue-kt:0.3.0")
+    implementation(files("lib/gotrue-kt-0.3.0.jar"))
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.testcontainers:junit-jupiter")

@@ -1,15 +1,18 @@
 package de.tschuehly.tomskaffeeroesterei.model
 
 import io.supabase.gotrue.types.GoTrueUserResponse
+import org.apache.catalina.security.SecurityUtil
+import org.springframework.security.core.Authentication
 import org.springframework.security.core.GrantedAuthority
-import org.springframework.security.core.authority.SimpleGrantedAuthority
-import org.springframework.security.core.userdetails.UserDetails
+import org.springframework.security.core.authority.AuthorityUtils
+import org.springframework.util.StringUtils
 import java.util.*
 import javax.persistence.*
 
 @Entity
 data class WebsiteUser(
     @Id
+    @MapsId("auth.users_id")
     var uuid: UUID,
     @Column(unique = true)
     var email: String,
@@ -21,38 +24,40 @@ data class WebsiteUser(
     var postalCode: String = "",
     var city: String = "",
     var street: String = ""
-) : UserDetails {
+
+) : Authentication {
 
     constructor(goTrueUserResponse: GoTrueUserResponse) : this(
         UUID.fromString(goTrueUserResponse.id),
         goTrueUserResponse.email
 
     )
+
+    override fun getName(): String {
+        TODO("Not yet implemented")
+    }
+
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        return roles.map { SimpleGrantedAuthority(it) }.toMutableList()
+        val auth = this.roles.toTypedArray()
+        return AuthorityUtils.createAuthorityList(*auth)
     }
 
-    override fun getPassword(): String {
-        return ""
+    override fun getCredentials(): Any? {
+        return null
     }
 
-    override fun getUsername(): String {
-        return email
+    override fun getDetails(): Any? {
+        return null
     }
 
-    override fun isAccountNonExpired(): Boolean {
+    override fun getPrincipal(): Any {
+        return this.email
+    }
+
+    override fun isAuthenticated(): Boolean {
         return true
     }
 
-    override fun isAccountNonLocked(): Boolean {
-        return true
-    }
-
-    override fun isCredentialsNonExpired(): Boolean {
-        return true
-    }
-
-    override fun isEnabled(): Boolean {
-        return true
+    override fun setAuthenticated(isAuthenticated: Boolean) {
     }
 }
