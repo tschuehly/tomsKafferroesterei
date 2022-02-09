@@ -20,6 +20,10 @@ class WebController() {
     fun loginSite(): String {
         return "login"
     }
+    @GetMapping("/konto")
+    fun order(): String {
+        return "account"
+    }
 
     @GetMapping("/die-roesterei")
     fun dieRoesterei(): String {

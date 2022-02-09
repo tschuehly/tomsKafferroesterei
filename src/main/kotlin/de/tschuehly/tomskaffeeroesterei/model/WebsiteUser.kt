@@ -12,8 +12,7 @@ import javax.persistence.*
 @Entity
 data class WebsiteUser(
     @Id
-    @MapsId("auth.users_id")
-    var uuid: UUID,
+    var id: UUID,
     @Column(unique = true)
     var email: String,
     @ElementCollection
@@ -34,7 +33,7 @@ data class WebsiteUser(
     )
 
     override fun getName(): String {
-        TODO("Not yet implemented")
+        return email
     }
 
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {

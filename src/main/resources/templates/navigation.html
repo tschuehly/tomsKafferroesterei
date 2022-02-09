@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns:x-bind="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+    <link rel="prefetch" href="/static/Oswald-VariableFont_wght.ttf" as="font" type="font/truetype" crossorigin>
 </head>
 
 <body class="font-[oswald] text-lg">
@@ -17,8 +18,7 @@
                     items-center  justify-start flex-col md:flex-row" id="navigation" x-data="{ open:false }">
             <div class="w-full md:w-fit flex justify-between md:block">
                 <a href="/">
-                    <img class="px-4"
-                        src="https://static.wixstatic.com/media/edfe42_0e962e67dab0435fb8330b66540d7963~mv2.png/v1/fill/w_103,h_103,al_c,q_85,usm_0.66_1.00_0.01/Logo-Toms-Kontur%20(2)%20(1)-001_edited.webp">
+                    <img class="px-4 h-32" src="/static/images/logo_navbar.webp">
                 </a>
                 <button class="block md:hidden" @click="open=!open">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="40"
@@ -40,7 +40,7 @@
                 <a>Kontakt</a>
                 <a>Jobs</a>
                 <a>Gastro-Büro-Wiederverkäufer</a>
-                <a class="flex justify-center">
+                <a href="/konto" class="flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="40"
                         height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">

@@ -29,24 +29,25 @@ class SpringSecurityConfig(
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
-            .exceptionHandling()
-            .authenticationEntryPoint { request: HttpServletRequest?, response: HttpServletResponse, ex: AuthenticationException ->
-                response.sendError(
-                    HttpServletResponse.SC_UNAUTHORIZED,
-                    ex.message
-                )
-            }
+            .formLogin()
+            .loginPage("/login")
+            .and()
+            .logout()
+            .deleteCookies("JWT")
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/")
             .and()
             .authorizeRequests()
             // Our public endpoints
             .antMatchers(
-                "/index.html", "/favicon**.png", "/*.js", "/*.js.map", "/*.json",
-                "/*.css", "/static/**", "/h2-console/*","/login","/signup","/","/partial/**"
+                "/index.html", "/favicon**.webp", "/*.js",
+                "/*.css", "/static/**", "/h2-console/*","/login","/signup","/"
             ).permitAll()
-            .antMatchers(HttpMethod.POST, "/api/order/create", "/api/user/login").permitAll()
+            .antMatchers(HttpMethod.GET, "/","/partial/**", "/shop/**","/logout","/die-roesterei").permitAll()
             .antMatchers(HttpMethod.POST, "/api/user/register","/api/user/login").permitAll()
             // Our private endpoints
-            .antMatchers("/shop/**").hasRole("USER")
+            .antMatchers("/konto").hasRole("USER")
+            .antMatchers("/admin/**").hasRole("ADMIN")
             .anyRequest().authenticated()
             .and()
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter::class.java)
