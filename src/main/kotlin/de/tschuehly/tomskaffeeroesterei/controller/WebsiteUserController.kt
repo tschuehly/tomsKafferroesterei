@@ -8,6 +8,7 @@ import io.supabase.gotrue.http.GoTrueHttpException
 import io.supabase.gotrue.types.GoTrueTokenResponse
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
+import javax.servlet.http.Cookie
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
@@ -17,14 +18,24 @@ class WebsiteUserController(
     private val websiteUserRepository: WebsiteUserRepository
 ) {
     @PostMapping("/register")
-    fun register(@RequestParam credentials: Map<String, String>): String? {
+    fun register(@RequestParam credentials: Map<String, String>, response: HttpServletResponse): String? {
         if (credentials["email"] != null && credentials["password"] != null) {
             try {
-                val websiteUser = goTrueClient()
+                val authDTO = goTrueClient()
                     .signUpWithEmail(credentials["email"]!!, credentials["password"]!!)
-                println(websiteUser)
-//                websiteUserRepository.save(websiteUser)
-                return "/partial/check-email"
+                websiteUserRepository.save(WebsiteUser(authDTO))
+                response.setHeader("HX-Redirect","/konto")
+                response.addCookie(Cookie("JWT",authDTO.accessToken).also {
+                    it.secure = true
+                    it.isHttpOnly = true
+                    it.path = "/"
+                    it.maxAge = 6000
+                })
+                response.addCookie(Cookie("authenticated","true").also {
+                    it.secure = true
+                    it.path = "/"
+                    it.maxAge = 6000
+                })
             } catch (e: GoTrueHttpException) {
                 if (e.data?.contains("User already registered") == true) {
                     return "/partial/user-already-registered"
@@ -43,9 +54,18 @@ class WebsiteUserController(
             try {
                 val resp = goTrueClient().signInWithEmail(credentials["email"]!!, credentials["password"]!!)
                 println(resp)
+                response.addCookie(Cookie("JWT",resp.accessToken).also {
+                    it.secure = true
+                    it.isHttpOnly = true
+                    it.path = "/"
+                    it.maxAge = 6000
+                })
+                response.addCookie(Cookie("authenticated","true").also {
+                    it.secure = true
+                    it.path = "/"
+                    it.maxAge = 6000
+                })
                 response.setHeader("HX-Redirect","/konto")
-                response.setHeader("Set-Cookie", "JWT=${resp.accessToken}; Secure; HttpOnly; Path=/;Max-Age=6000;")
-
             } catch (e: GoTrueHttpException) {
                 if (e.data?.contains("Invalid login credentials") == true) {
                     return "/partial/invalid-login"

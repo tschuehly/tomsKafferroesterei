@@ -1,5 +1,6 @@
 package de.tschuehly.tomskaffeeroesterei.model
 
+import de.tschuehly.tomskaffeeroesterei.dto.AuthDTO
 import io.supabase.gotrue.types.GoTrueUserResponse
 import org.apache.catalina.security.SecurityUtil
 import org.springframework.security.core.Authentication
@@ -23,13 +24,11 @@ data class WebsiteUser(
     var postalCode: String = "",
     var city: String = "",
     var street: String = ""
-
 ) : Authentication {
 
-    constructor(goTrueUserResponse: GoTrueUserResponse) : this(
-        UUID.fromString(goTrueUserResponse.id),
-        goTrueUserResponse.email
-
+    constructor(authDTO: AuthDTO) : this(
+        id = authDTO.user.id,
+        email = authDTO.user.email
     )
 
     override fun getName(): String {

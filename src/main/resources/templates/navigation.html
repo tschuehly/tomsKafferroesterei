@@ -6,6 +6,7 @@
     <title>Toms Kaffeerösterei</title>
     <link href="/static/output.css" rel="stylesheet">
     <link href="/static/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/pell/dist/pell.min.css">
     <script src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.6.1"></script>
@@ -40,6 +41,12 @@
                 <a>Kontakt</a>
                 <a>Jobs</a>
                 <a>Gastro-Büro-Wiederverkäufer</a>
+
+                <div x-data="{authenticated: document.cookie.split('authenticated=')[1]}" x-show="authenticated">
+                    <a href="/verwaltung">
+                        Verwaltung
+                    </a>
+                </div>
                 <a href="/konto" class="flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="40"
                         height="40" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none"

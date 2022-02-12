@@ -33,7 +33,7 @@ class SpringSecurityConfig(
             .loginPage("/login")
             .and()
             .logout()
-            .deleteCookies("JWT")
+            .deleteCookies("JWT","authenticated")
             .logoutUrl("/logout")
             .logoutSuccessUrl("/")
             .and()
