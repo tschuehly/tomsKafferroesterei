@@ -24,18 +24,22 @@ class WebsiteUserController(
                 val authDTO = goTrueClient()
                     .signUpWithEmail(credentials["email"]!!, credentials["password"]!!)
                 websiteUserRepository.save(WebsiteUser(authDTO))
-                response.setHeader("HX-Redirect","/konto")
-                response.addCookie(Cookie("JWT",authDTO.accessToken).also {
-                    it.secure = true
-                    it.isHttpOnly = true
-                    it.path = "/"
-                    it.maxAge = 6000
-                })
-                response.addCookie(Cookie("authenticated","true").also {
-                    it.secure = true
-                    it.path = "/"
-                    it.maxAge = 6000
-                })
+                response.setHeader("HX-Redirect", "/konto")
+                response.addCookie(
+                    Cookie("JWT", authDTO.accessToken).also {
+                        it.secure = true
+                        it.isHttpOnly = true
+                        it.path = "/"
+                        it.maxAge = 6000
+                    }
+                )
+                response.addCookie(
+                    Cookie("authenticated", "true").also {
+                        it.secure = true
+                        it.path = "/"
+                        it.maxAge = 6000
+                    }
+                )
             } catch (e: GoTrueHttpException) {
                 if (e.data?.contains("User already registered") == true) {
                     return "/partial/user-already-registered"
@@ -49,29 +53,32 @@ class WebsiteUserController(
     }
 
     @PostMapping("/login")
-    fun login(@RequestParam credentials: Map<String, String>, response: HttpServletResponse,request: HttpServletRequest): String {
+    fun login(@RequestParam credentials: Map<String, String>, response: HttpServletResponse, request: HttpServletRequest): String {
         if (credentials["email"] != null && credentials["password"] != null) {
             try {
                 val resp = goTrueClient().signInWithEmail(credentials["email"]!!, credentials["password"]!!)
                 println(resp)
-                response.addCookie(Cookie("JWT",resp.accessToken).also {
-                    it.secure = true
-                    it.isHttpOnly = true
-                    it.path = "/"
-                    it.maxAge = 6000
-                })
-                response.addCookie(Cookie("authenticated","true").also {
-                    it.secure = true
-                    it.path = "/"
-                    it.maxAge = 6000
-                })
-                response.setHeader("HX-Redirect","/konto")
+response.addCookie(
+    Cookie("JWT", resp.accessToken).also {
+        it.secure = true
+        it.isHttpOnly = true
+        it.path = "/"
+        it.maxAge = 6000
+    }
+    )
+                response.addCookie(
+                    Cookie("authenticated", "true").also {
+                        it.secure = true
+                        it.path = "/"
+                        it.maxAge = 6000
+                    }
+                )
+                response.setHeader("HX-Redirect", "/konto")
             } catch (e: GoTrueHttpException) {
                 if (e.data?.contains("Invalid login credentials") == true) {
                     return "/partial/invalid-login"
                 } else {
                     println(e.data)
-
                 }
             }
         }
